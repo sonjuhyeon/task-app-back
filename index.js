@@ -6,7 +6,7 @@ const app = express(); // express 모듈을 사용하기 위해 app 변수에 �
 
 app.use(
   cors({
-    origin: "https://taskfront.microdeveloper.co.kr/",
+    origin: "https://taskfront.microdeveloper.co.kr",
     credentials: true,
   })
 );
