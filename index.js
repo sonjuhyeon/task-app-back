@@ -6,7 +6,7 @@ const app = express(); // express 모듈을 사용하기 위해 app 변수에 �
 
 app.use(
   cors({
-    origin: "https://taskfront.microdeveloper.co.kr",
+    origin: "http://localhost:3000",
     credentials: true,
   })
 );
@@ -16,15 +16,6 @@ app.use(express.json()); // express 모듈의 json() 메소드를 사용
 app.get("/", (request, response) => {
   response.send("Hello World https back completed");
 });
-
-// app.get("/get_tasks", async (req, res) => {
-//   try {
-//     const result = await database.query("SELECT * FROM task");
-//     return res.status(200).json(result.rows);
-//   } catch (error) {
-//     return res.status(500).json({ error: error.message });
-//   }
-// });
 
 app.use(require("./routes/getRoutes"));
 app.use(require("./routes/postRoutes"));
